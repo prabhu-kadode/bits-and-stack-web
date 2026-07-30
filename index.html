@@ -1071,7 +1071,16 @@
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="tel" id="phoneNumber" required placeholder="Enter your phone number">
+                    <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    inputmode="numeric"
+                    required
+                    placeholder="Enter your 10-digit phone number"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);">
                 </div>
                 <div class="form-group">
                     <label for="courseSelect">Select Programme</label>
@@ -1330,7 +1339,7 @@ regForm.addEventListener('submit', function (e) {
     })
     .then(() => {
         formStatus.style.color = '#059669';
-        formStatus.textContent = 'Registration submitted successfully!';
+        formStatus.textContent = 'Thank you for registering with Bits & Stack Academy. We have received your enquiry and will contact you shortly!';
         regForm.reset();
         submitBtn.disabled = false;
         submitBtn.textContent = 'Submit Application';
@@ -1338,7 +1347,7 @@ regForm.addEventListener('submit', function (e) {
         setTimeout(() => {
             modal.classList.remove('active');
             formStatus.textContent = '';
-        }, 2000);
+        }, 5000);
     })
     .catch((err) => {
         console.error(err);
