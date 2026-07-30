@@ -594,6 +594,80 @@
             stroke-width: 2;
         }
 
+         /* NEW REGISTRATION FORM STYLES */
+         .register-btn {
+            background: linear-gradient(135deg, #0284C7 0%, #2563EB 100%);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-family: inherit;
+            color: #1E293B;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #0B3D91;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #1E40AF;
+        }
+
+        .form-status {
+            margin-top: 12px;
+            font-size: 0.8438rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
         /* RESPONSIVE MEDIA QUERIES */
         @media (max-width: 820px) {
             .info-card-table {
@@ -956,6 +1030,7 @@
     <div class="footer-banner">
         <div class="footer-tagline">Transform Your Tech Career</div>
         <div class="footer-brand">Bits &amp; Stack Academy</div>
+        <button class="register-btn" id="openRegisterModal">Register Now</button>
         <div class="footer-credits">
             Designed &amp; Developed at <span>Bits &amp; Stack Academy © 2026</span>
         </div>
@@ -973,6 +1048,42 @@
             <ul class="modal-topic-list" id="modalList">
                 <!-- Javascript will inject list items dynamically -->
             </ul>
+        </div>
+    </div>
+</div>
+
+<!-- REGISTRATION FORM MODAL -->
+<div class="modal-overlay" id="registerModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 class="modal-title">Student Registration</h3>
+            <button class="modal-close-btn" id="closeRegisterModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" id="emailAddress" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" required placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="courseSelect">Select Programme</label>
+                    <select id="courseSelect" required>
+                        <option value="">-- Choose a Programme --</option>
+                        <option value="Production-Ready Data Engineering">Production-Ready Data Engineering</option>
+                        <option value="Production-Ready Python Backend">Production-Ready Python Backend</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn" id="submitFormBtn">Submit Application</button>
+                <div class="form-status" id="formStatus"></div>
+            </form>
         </div>
     </div>
 </div>
@@ -1167,6 +1278,76 @@
             closeModal();
         }
     });
+
+// REPLACE THIS WITH YOUR DEPLOYED GOOGLE APPS SCRIPT WEB APP URL
+const GOOGLE_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxwPWm7Rvx7Ebagca2MBI2CJl2OzmBd8xzmpDYT154fM8F5cC4pziq9QeeUCw7MrfggGQ/exec';
+
+const modal = document.getElementById('registerModal');
+const openBtn = document.getElementById('openRegisterModal');
+const closeBtn = document.getElementById('closeRegisterModal');
+const regForm = document.getElementById('registrationForm');
+const formStatus = document.getElementById('formStatus');
+const submitBtn = document.getElementById('submitFormBtn');
+
+openBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    formStatus.textContent = '';
+});
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+        formStatus.textContent = '';
+    }
+});
+
+regForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    formStatus.style.color = '#2563EB';
+    formStatus.textContent = 'Sending details...';
+
+    const payload = {
+        name: document.getElementById('fullName').value,
+        email: document.getElementById('emailAddress').value,
+        phone: document.getElementById('phoneNumber').value,
+        course: document.getElementById('courseSelect').value
+    };
+
+    fetch(GOOGLE_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(() => {
+        formStatus.style.color = '#059669';
+        formStatus.textContent = 'Registration submitted successfully!';
+        regForm.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Application';
+        
+        setTimeout(() => {
+            modal.classList.remove('active');
+            formStatus.textContent = '';
+        }, 2000);
+    })
+    .catch((err) => {
+        console.error(err);
+        formStatus.style.color = '#DC2626';
+        formStatus.textContent = 'Submission failed. Please try again.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Application';
+    });
+});
 </script>
 
 </body>
