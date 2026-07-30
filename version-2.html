@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bits &amp; Stack Academy - Brochure</title>
+     <!-- Favicon -->
+     <!-- <link rel="icon" type="image/png" href="pdf/b-s-logo.png"> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -221,7 +223,7 @@
         /* Programme Info Grid Table */
         .info-card-table {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
             border: 1.5px solid #CBD5E1;
             border-radius: 14px;
@@ -594,8 +596,8 @@
             stroke-width: 2;
         }
 
-        /* NEW REGISTRATION FORM STYLES */
-        .register-btn {
+         /* NEW REGISTRATION FORM STYLES */
+         .register-btn {
             background: linear-gradient(135deg, #0284C7 0%, #2563EB 100%);
             color: #FFFFFF;
             border: none;
@@ -605,6 +607,7 @@
             border-radius: 8px;
             cursor: pointer;
             margin-top: 16px;
+            margin-bottom: 16px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
@@ -856,9 +859,14 @@
     <div class="info-card-table">
         <div class="info-cell">
             <div class="info-label">Duration</div>
-            <div class="info-value">3 Months</div>
+            <div class="info-value">2 Months</div>
             <div class="info-subvalue">Intensive Bootcamp</div>
         </div>
+        <!-- <div class="info-cell">
+            <div class="info-label">Course Fee</div>
+            <div class="info-value">₹65,000</div>
+            <div class="info-subvalue">Per Student</div>
+        </div> -->
         <div class="info-cell">
             <div class="info-label">Mode</div>
             <div class="info-value">Live Online</div>
@@ -963,23 +971,85 @@
                     <svg class="topic-icon"  viewBox="0 0 24 24"><path fill="#FF6C37" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
                     Postman
                 </div>
+                <div class="topic-badge clickable" data-topic="">
+                    <svg class="topic-icon"  viewBox="0 0 24 24"><path fill="#F05032" d="M2.6 10.59L11.5 1.7c.39-.39 1.02-.39 1.41 0l8.9 8.89c.39.39.39 1.02 0 1.41l-8.9 8.9c-.39.39-1.02.39-1.41 0l-8.9-8.89c-.38-.38-.38-1.02 0-1.41z"></path></svg>
+                    Git &amp; GitHub
+                </div>
+                <div class="topic-badge clickable" data-topic="GitHub Actions">
+                    <svg class="topic-icon clickable" data-topic="GitHub Actions" viewBox="0 0 24 24"><path fill="#2088FF" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    GitHub Actions
+                </div>
+                <div class="topic-badge clickable">
+                    <svg class="topic-icon clickable" data-topic="" viewBox="0 0 24 24"><path fill="#0B3D91" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
+                    Backend Project
+                </div>
+                <div class="topic-badge clickable">
+                    <svg class="topic-icon clickable" data-topic="" viewBox="0 0 24 24"><path fill="#0B3D91" d="M9.4 16.6L4.8 12l1.4-1.4 3.2 3.2 7.2-7.2 1.4 1.4z"></path></svg>
+                    Coding Standards
+                </div>
+                <div class="topic-badge clickable">
+                    <svg class="topic-icon clickable" data-topic="" viewBox="0 0 24 24"><path fill="#0284C7" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+                    Mock Interviews
+                </div>
             </div>
             <div class="course-fee">
-                Course Fee: ₹65,000 Per Student
+                Course Fee: ₹75,000 Per Student
             </div>
         </div>
     </div>
 
-    <!-- FOOTER BANNER WITH REGISTRATION CALL-TO-ACTION -->
-    <div class="footer-banner">
-        <div class="footer-tagline">Start Your Engineering Journey Today</div>
-        <div class="footer-brand">Bits &amp; Stack Academy</div>
-        <div class="footer-sub">Transforming learners into high-performing industry professionals</div>
-        
-        <button class="register-btn" id="openRegisterModal">Register Now</button>
+    <!-- WHY CHOOSE BITS & STACK ACADEMY -->
+    <div class="section-title-container">
+        <h2 class="section-title">Why Choose Bits &amp; Stack Academy</h2>
+        <div class="section-subtitle">Designed for tangible career acceleration and production readiness</div>
+    </div>
 
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" stroke="#2563EB" class="svg-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div class="feature-title">Production-Oriented</div>
+            <div class="feature-desc">Learn industry standards and enterprise architecture patterns.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" stroke="#2563EB" class="svg-icon"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <div class="feature-title">Real Industry Projects</div>
+            <div class="feature-desc">Work on real production codebase rather than dummy assignments.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" stroke="#2563EB" class="svg-icon"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 1 0 7.75"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="feature-title">1-on-1 Mentorship</div>
+            <div class="feature-desc">Direct guidance and individualized feedback from industry experts.</div>
+        </div>
+    </div>
+
+    <!-- FOOTER BANNER & CREDITS -->
+    <div class="footer-banner">
+        <div class="footer-tagline">Transform Your Tech Career</div>
+        <div class="footer-brand">Bits &amp; Stack Academy</div>
+        <button class="register-btn" id="openRegisterModal">Register Now</button>
         <div class="footer-credits">
-            Crafted for <span>Production Excellence</span>
+            Designed &amp; Developed at <span>Bits &amp; Stack Academy © 2026</span>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL POPUP DIALOG -->
+<div class="modal-overlay" id="topicsModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modalTitle">Module Curriculum</h3>
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <ul class="modal-topic-list" id="modalList">
+                <!-- Javascript will inject list items dynamically -->
+            </ul>
         </div>
     </div>
 </div>
@@ -1003,7 +1073,16 @@
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="tel" id="phoneNumber" required placeholder="Enter your phone number">
+                    <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    inputmode="numeric"
+                    required
+                    placeholder="Enter your 10-digit phone number"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);">
                 </div>
                 <div class="form-group">
                     <label for="courseSelect">Select Programme</label>
@@ -1021,75 +1100,265 @@
 </div>
 
 <script>
-    // REPLACE THIS WITH YOUR DEPLOYED GOOGLE APPS SCRIPT WEB APP URL
-    const GOOGLE_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxwPWm7Rvx7Ebagca2MBI2CJl2OzmBd8xzmpDYT154fM8F5cC4pziq9QeeUCw7MrfggGQ/exec';
+    // JS Array storing items for Python & SQL topics
+    const topicDetails = {
+    "Python": [
+        "Python Fundamentals: Variables, Data Types, Operators & Control Flow",
+        "Functions, Modules, File Handling & Exception Handling",
+        "Object-Oriented Programming (OOP), Iterators, Generators & Decorators",
+        "Collections, List Comprehensions & Lambda Functions",
+        "Virtual Environments, Package Management & Project Structure",
+        "Concurrency: Multithreading, Multiprocessing & Async Programming",
+        "Testing, Debugging, Logging, Type Hints & Production Best Practices",
+        "Errors, Error Types, Error Handeling"
+    ],
 
-    const modal = document.getElementById('registerModal');
-    const openBtn = document.getElementById('openRegisterModal');
-    const closeBtn = document.getElementById('closeRegisterModal');
-    const regForm = document.getElementById('registrationForm');
-    const formStatus = document.getElementById('formStatus');
-    const submitBtn = document.getElementById('submitFormBtn');
+    "SQL": [
+        "Database Fundamentals, CRUD Operations & Data Modelling",
+        "Filtering, Sorting, Joins & Subqueries",
+        "Aggregations, GROUP BY, HAVING & Set Operations",
+        "Window Functions, Common Table Expressions (CTEs) & Views",
+        "Indexes, Query Optimisation & Performance Tuning",
+        "Transactions, Stored Procedures & Database Design",
+        "Advanced SQL for Analytics & Real-World Business Scenarios"
+    ],
 
-    openBtn.addEventListener('click', () => {
-        modal.classList.add('active');
+    "Pandas": [
+        "Series, DataFrames & Data Import/Export",
+        "Data Cleaning, Missing Values & Data Transformation",
+        "Filtering, Sorting, GroupBy & Aggregation",
+        "Merging, Joining & Concatenating Datasets",
+        "Time Series Processing & Date Operations",
+        "Exploratory Data Analysis (EDA) & Reporting",
+        "Performance Optimisation & Production Data Processing"
+    ],
+
+    "ETL Pipelines": [
+        "ETL Fundamentals & Data Pipeline Architecture",
+        "Extracting Data from Files, APIs & Databases",
+        "Data Cleaning, Validation & Transformation",
+        "Loading Data into SQL Databases & Data Warehouses",
+        "Workflow Automation & Job Scheduling",
+        "Logging, Monitoring & Error Handling",
+        "Building Production-Ready ETL Pipelines"
+    ],
+
+    "Git": [
+        "Version Control Fundamentals & Repository Management",
+        "Branching, Merging & Conflict Resolution",
+        "Commit Best Practices & Git Workflow",
+        "Stashing, Rebasing & Cherry-Picking",
+        "Working with Remote Repositories",
+        "Release Management & Tagging",
+        "Professional Git Practices for Teams"
+    ],
+
+    "GitHub": [
+        "Repository Management & Collaboration",
+        "Branch Protection & Pull Requests",
+        "Code Reviews & Team Collaboration",
+        "Issue Tracking & Project Boards",
+        "GitHub Releases & Repository Security",
+        "Managing Open Source & Private Projects",
+        "Professional GitHub Workflow"
+    ],
+
+    "GitHub Actions": [
+        "Introduction to Continuous Integration (CI)",
+        "Workflow Files & Event Triggers",
+        "Automated Build, Test & Validation Pipelines",
+        "Managing Secrets & Environment Variables",
+        "Continuous Deployment (CD) Basics",
+        "Production CI/CD Pipeline Best Practices"
+    ],
+
+    "FastAPI": [
+        "FastAPI Fundamentals & Project Setup",
+        "Routing, Request Validation & Response Models",
+        "Dependency Injection & Middleware",
+        "Authentication & Authorization",
+        "Database Integration with SQLAlchemy",
+        "Exception Handling, Logging & Configuration",
+        "Building Scalable Production-Ready APIs"
+    ],
+
+    "REST API": [
+        "REST Architecture & HTTP Fundamentals",
+        "CRUD API Development & Best Practices",
+        "Request, Response & Status Codes",
+        "Authentication using JWT & API Security",
+        "Pagination, Filtering & API Versioning",
+        "Error Handling & API Documentation",
+        "Designing Enterprise-Ready REST APIs"
+    ],
+
+    "Postman": [
+        "API Testing Fundamentals",
+        "Collections & Environment Variables",
+        "Authentication & Authorization Testing",
+        "Writing Test Scripts & Assertions",
+        "Automating API Testing Workflows",
+        "API Documentation & Team Collaboration",
+        "Performance & Regression Testing"
+    ],
+
+    "Mentorship": [
+        "Weekly Live Doubt-Clearing Sessions",
+        "Personalised Learning Roadmap",
+        "Resume & LinkedIn Profile Review",
+        "GitHub Portfolio Development",
+        "Code Reviews & Best Engineering Practices",
+        "Mock Interviews & Technical Feedback",
+        "Career Guidance & Placement Preparation"
+    ],
+
+    "Project": [
+        "Requirement Analysis & Project Planning",
+        "Application Architecture & Project Structure",
+        "Industry Standard Folder Organization",
+        "Database Design & API Development",
+        "Git Workflow & CI/CD Integration",
+        "Testing, Documentation & Deployment",
+        "End-to-End Production-Ready Capstone Project"
+    ]
+};
+
+    // DOM Elements
+    const modalOverlay = document.getElementById('topicsModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalList = document.getElementById('modalList');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const clickableBadges = document.querySelectorAll('.topic-badge.clickable');
+
+    // Function to render items in the modal popup
+    function openModal(topicKey) {
+        const items = topicDetails[topicKey];
+        if (!items) return;
+
+        modalTitle.textContent = `${topicKey} Modules`;
+        modalList.innerHTML = ''; // Clear previous items
+
+        // Render each item in array
+        items.forEach(itemText => {
+            const li = document.createElement('li');
+            li.className = 'modal-topic-item';
+
+            const bullet = document.createElement('span');
+            bullet.className = 'modal-topic-bullet';
+
+            const text = document.createElement('span');
+            text.textContent = itemText;
+
+            li.appendChild(bullet);
+            li.appendChild(text);
+            modalList.appendChild(li);
+        });
+
+        // Trigger smooth transition
+        requestAnimationFrame(() => {
+            modalOverlay.classList.add('active');
+        });
+    }
+
+    // Function to close modal with smooth transition
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+    }
+
+    // Event listeners for clickable badges
+    clickableBadges.forEach(badge => {
+        badge.addEventListener('click', () => {
+            const topic = badge.getAttribute('data-topic');
+            openModal(topic);
+        });
     });
 
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        formStatus.textContent = '';
-    });
+    // Close button click
+    modalCloseBtn.addEventListener('click', closeModal);
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            formStatus.textContent = '';
+    // Click outside modal content to close
+    modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay) {
+            closeModal();
         }
     });
 
-    regForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting...';
-        formStatus.style.color = '#2563EB';
-        formStatus.textContent = 'Sending details...';
-
-        const payload = {
-            name: document.getElementById('fullName').value,
-            email: document.getElementById('emailAddress').value,
-            phone: document.getElementById('phoneNumber').value,
-            course: document.getElementById('courseSelect').value
-        };
-
-        fetch(GOOGLE_WEB_APP_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        })
-        .then(() => {
-            formStatus.style.color = '#059669';
-            formStatus.textContent = 'Registration submitted successfully!';
-            regForm.reset();
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Submit Application';
-            
-            setTimeout(() => {
-                modal.classList.remove('active');
-                formStatus.textContent = '';
-            }, 2000);
-        })
-        .catch((err) => {
-            console.error(err);
-            formStatus.style.color = '#DC2626';
-            formStatus.textContent = 'Submission failed. Please try again.';
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Submit Application';
-        });
+    // Close on Escape key press
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modalOverlay.classList.contains('active')) {
+            closeModal();
+        }
     });
+
+// REPLACE THIS WITH YOUR DEPLOYED GOOGLE APPS SCRIPT WEB APP URL
+const GOOGLE_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxwPWm7Rvx7Ebagca2MBI2CJl2OzmBd8xzmpDYT154fM8F5cC4pziq9QeeUCw7MrfggGQ/exec';
+
+const modal = document.getElementById('registerModal');
+const openBtn = document.getElementById('openRegisterModal');
+const closeBtn = document.getElementById('closeRegisterModal');
+const regForm = document.getElementById('registrationForm');
+const formStatus = document.getElementById('formStatus');
+const submitBtn = document.getElementById('submitFormBtn');
+
+openBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    formStatus.textContent = '';
+});
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+        formStatus.textContent = '';
+    }
+});
+
+regForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    formStatus.style.color = '#2563EB';
+    formStatus.textContent = 'Sending details...';
+
+    const payload = {
+        name: document.getElementById('fullName').value,
+        email: document.getElementById('emailAddress').value,
+        phone: document.getElementById('phoneNumber').value,
+        course: document.getElementById('courseSelect').value
+    };
+
+    fetch(GOOGLE_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(() => {
+        formStatus.style.color = '#059669';
+        formStatus.textContent = 'Thank you for registering with Bits & Stack Academy. We have received your enquiry and will contact you shortly!';
+        regForm.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Application';
+        
+        setTimeout(() => {
+            modal.classList.remove('active');
+            formStatus.textContent = '';
+        }, 5000);
+    })
+    .catch((err) => {
+        console.error(err);
+        formStatus.style.color = '#DC2626';
+        formStatus.textContent = 'Submission failed. Please try again.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Application';
+    });
+});
 </script>
 
 </body>
